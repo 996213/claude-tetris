@@ -88,6 +88,20 @@ jobs:
                - acceptance_criteria: criterios verificables para dar el issue por resuelto
                - open_questions: dudas a aclarar con quien reportó (vacío si no hay)
 
+            Formato del contenido: todo lo que escribas se publica como comentario del issue, así que
+            cada campo de texto debe ser Markdown válido para GitHub (GitHub Flavored Markdown):
+               - Usa `backticks` para nombres de archivos, funciones, constantes, teclas y valores
+                 (p. ej. `game.js`, `tryRotate`, `ArrowUp`), y **negrita** o _cursiva_ para énfasis.
+               - Si incluyes fragmentos de código de varias líneas (solo en summary o probable_cause),
+                 usa bloques con triple backtick e indica el lenguaje (```js, ```css, ```html).
+               - No uses encabezados (#, ##, ###): el comentario ya los incluye.
+               - En los campos que son listas (proposed_approach, acceptance_criteria, open_questions)
+                 y en affected_files[].reason, cada elemento debe ser una sola línea, sin viñetas ni
+                 numeración al inicio ("- ", "1. ", "[ ]"), porque el formato de lista se agrega automáticamente.
+               - En affected_files[].path y affected_files[].symbols escribe solo el nombre, sin backticks
+                 (el comentario ya los formatea como código).
+               - No escribas HTML ni comentarios HTML (<!-- -->).
+
             Verifica en el código real los nombres de archivos y funciones que menciones; no los inventes.
             No modifiques archivos. Escribe todo el contenido en español.
           claude_args: |
